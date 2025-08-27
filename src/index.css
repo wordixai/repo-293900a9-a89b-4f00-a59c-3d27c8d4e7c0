@@ -8,20 +8,112 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-   
+    /* Tokyo AI Theme Colors */
+    --background: 220 10% 7%; /* #121212 */
+    --foreground: 0 0% 100%; /* white */
+    --card: 220 10% 10%; /* #1a1a1a */
+    --card-foreground: 0 0% 100%;
+    --popover: 220 10% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%; /* white */
+    --primary-foreground: 220 10% 7%; /* #121212 */
+    --secondary: 220 7% 18%; /* #2e2e2e */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 10% 10%;
+    --muted-foreground: 240 5% 65%; /* zinc-300 equivalent */
+    --accent: 220 10% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 7% 18%; /* #2e2e2e */
+    --input: 220 7% 18%;
+    --ring: 0 0% 100%;
+    --radius: 0.75rem;
+
+    /* Custom Tokyo colors */
+    --tokyo-dark: 220 10% 7%; /* #121212 */
+    --tokyo-card: 220 10% 10%; /* #1a1a1a */
+    --tokyo-border: 220 7% 18%; /* #2e2e2e */
+    --tokyo-gray: 240 4% 52%; /* #858585 */
+    --tokyo-text: 240 5% 65%; /* zinc-300 */
   }
 
   .dark {
-
+    --background: 220 10% 7%;
+    --foreground: 0 0% 100%;
+    --card: 220 10% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 220 10% 7%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 220 10% 7%;
+    --secondary: 220 7% 18%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 10% 10%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 220 10% 10%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 7% 18%;
+    --input: 220 7% 18%;
+    --ring: 0 0% 100%;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  .tokyo-gradient {
+    @apply bg-gradient-to-r from-black via-gray-500/20 to-black;
   }
+
+  .tokyo-card {
+    @apply bg-gradient-to-r from-black via-gray-500/20 to-black border border-gray-500/20;
+  }
+
+  .hero-button {
+    @apply bg-white text-black hover:bg-gray-100 font-bold px-8 py-4 rounded-xl transition-all hover:opacity-80;
+  }
+
+  .nav-button {
+    @apply bg-white text-black hover:opacity-80 px-4 py-2 font-semibold rounded-lg transition-colors;
+  }
+
+  .login-button {
+    @apply hover:opacity-80 text-white font-semibold px-6 py-2 rounded-lg transition-colors;
+  }
+
+  .feature-card {
+    @apply bg-white rounded-xl p-8 hover:border-gray-600 transition-all hover:scale-105;
+  }
+
+  .feature-icon {
+    @apply w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center mb-6;
+  }
+
+  .step-number {
+    @apply w-12 h-12 bg-white border-gray-500/20 rounded-xl flex items-center justify-center flex-shrink-0;
+  }
+
+  .tab-button {
+    @apply px-4 py-2 rounded-lg border transition-all;
+  }
+
+  .tab-button-active {
+    @apply bg-white text-black border-white;
+  }
+
+  .tab-button-inactive {
+    @apply text-gray-300 border-gray-600 hover:border-gray-400;
+  }
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: hsl(var(--tokyo-dark));
+  color: hsl(var(--foreground));
+  line-height: 1.6;
 }
